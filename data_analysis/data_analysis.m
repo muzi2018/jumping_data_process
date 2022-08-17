@@ -117,80 +117,25 @@ sum_error_vz_as=sum(abs(vz_AS(:,a:num)));
 sum_error_vz_nas=sum(abs(vz_NAS(:,a:num)));
 
 
-f4=figure;
-time=Velocity_Recording.lcm_timestamp/5;
-a=1;
-num=200;
-time=time(:,a:num);
-load('h_0.15_l_0.1_joint_as.mat');
 
-for i=1:16
-    
-end
+%     data_record_->joint_position_position[0]=q_[9]; /// torso_to_R_ShoulderRx
+%     data_record_->joint_position_position[1]=q_[10]; /// torso_to_L_ShoulderRx
+%     data_record_->joint_position_position[2]=q_[13]; /// R_ShoulderRx_to_R_UpperArm
+%     data_record_->joint_position_position[3]=q_[14]; /// L_ShoulderRx_to_L_UpperArm
+%     data_record_->joint_position_position[4]=q_[17]; /// R_UpperArm_to_R_ForeArm
+%     data_record_->joint_position_position[5]=q_[18]; /// L_UpperArm_to_L_ForeArm
+% 
+%     data_record_->joint_position_position[6]=q_[7]; /// torso_to_R_HipRz
+%     data_record_->joint_position_position[7]=q_[11]; /// R_HipRz_to_R_HipRx
+%     data_record_->joint_position_position[8]=q_[15]; /// R_HipRx_to_R_Thigh
+%     data_record_->joint_position_position[9]=q_[19]; /// R_Knee
+%     data_record_->joint_position_position[10]=q_[21]; /// R_Ankle
+%     data_record_->joint_position_position[11]=q_[8]; /// torso_to_L_HipRz
+%     data_record_->joint_position_position[12]=q_[12]; /// L_HipRz_to_L_HipRx
+%     data_record_->joint_position_position[13]=q_[16]; /// L_HipRx_to_L_Thigh
+%     data_record_->joint_position_position[14]=q_[20]; /// L_Knee
+%     data_record_->joint_position_position[15]=q_[22]; /// L_Ankle
 
-R_ShoulderRx=Joint_Position_Recording.joint_p(:,1)';
-R_ShoulderRx=R_ShoulderRx(:,2:end);
-R_ShoulderRx=R_ShoulderRx*180/3.14;
-Joint_AS.R_ShoulderRx=R_ShoulderRx;
-
-L_ShoulderRx=Joint_Position_Recording.joint_p(:,2)';
-L_ShoulderRx=L_ShoulderRx(:,2:end);
-L_ShoulderRx=L_ShoulderRx*180/3.14;
-Joint_AS.L_ShoulderRx=L_ShoulderRx;
-
-R_UpperArm=Joint_Position_Recording.joint_p(:,3)';
-R_UpperArm=R_UpperArm(:,2:end);
-R_UpperArm=R_UpperArm*180/3.14;
-Joint_AS.R_UpperArm=R_UpperArm;
-
-
-L_UpperArm=Joint_Position_Recording.joint_p(:,4)';
-L_UpperArm=L_UpperArm(:,2:end);
-L_UpperArm=L_UpperArm*180/3.14;
-Joint_AS.L_UpperArm=L_UpperArm;
-
-
-R_ForeArm=Joint_Position_Recording.joint_p(:,5)';
-R_ForeArm=R_ForeArm(:,2:end);
-R_ForeArm=R_ForeArm*180/3.14;
-Joint_AS.R_ForeArm=R_ForeArm;
-
-L_ForeArm=Joint_Position_Recording.joint_p(:,6)';
-L_ForeArm=L_ForeArm(:,2:end);
-L_ForeArm=L_ForeArm*180/3.14;
-Joint_AS.L_ForeArm=L_ForeArm;
-
-L_ForeArm=Joint_Position_Recording.joint_p(:,7)';
-L_ForeArm=L_ForeArm(:,2:end);
-L_ForeArm=L_ForeArm*180/3.14;
-Joint_AS.L_ForeArm=L_ForeArm;
-
-L_ForeArm=Joint_Position_Recording.joint_p(:,8)';
-L_ForeArm=L_ForeArm(:,2:end);
-L_ForeArm=L_ForeArm*180/3.14;
-Joint_AS.L_ForeArm=L_ForeArm;
-
-L_ForeArm=Joint_Position_Recording.joint_p(:,9)';
-L_ForeArm=L_ForeArm(:,2:end);
-L_ForeArm=L_ForeArm*180/3.14;
-Joint_AS.L_ForeArm=L_ForeArm;
-
-L_ForeArm=Joint_Position_Recording.joint_p(:,10)';
-L_ForeArm=L_ForeArm(:,2:end);
-L_ForeArm=L_ForeArm*180/3.14;
-Joint_AS.L_ForeArm=L_ForeArm;
-
-L_ForeArm=Joint_Position_Recording.joint_p(:,11)';
-L_ForeArm=L_ForeArm(:,2:end);
-L_ForeArm=L_ForeArm*180/3.14;
-Joint_AS.L_ForeArm=L_ForeArm;
-
-plot(time,R_UpperArm(:,a:num),'LineWidth',1.2);
-hold on;
-plot(time,R_ForeArm(:,a:num),'LineWidth',1.2);
-xlabel('time (s)');ylabel('angle (deg)');
-legend('UpperArm','ForeArm','Location', 'northwest');
-set(gca, 'linewidth',1, 'fontsize',15,'Fontname', 'Times New Roman','FontWeight','bold');
 
 
 
