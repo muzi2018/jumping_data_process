@@ -5,7 +5,7 @@ close all;
 % h=0.1, l=0.15;
 % h=0.1, l=0.2;
 
-% h=0.15, l=0.1;
+%% h=0.15, l=0.1;
 % E_Lower_as=151J;
 % E_Upper_as=13.82
 % E_Lower_nas=198.83J;
@@ -22,7 +22,238 @@ close all;
 % sum_error_vz_nas=392.38m/s
 
 % load('h_0.15_l_0.1_energy_nas.mat');
-load('h_0.15_l_0.1_energy_as.mat');
+% load('h_0.15_l_0.1_energy_as.mat');
+% E_RThigh_nas=Energy_Recording.energy_cost_joint(:,2+1)';
+% E_RThigh_nas=E_RThigh_nas(:,2:end);
+% E_RKnee_nas=Energy_Recording.energy_cost_joint(:,3+1)';
+% E_RKnee_nas=E_RKnee_nas(:,2:end);
+% E_RAnkle_nas=Energy_Recording.energy_cost_joint(:,4+1)';
+% E_RAnkle_nas=E_RAnkle_nas(:,2:end);
+% 
+% E_LThigh_nas=Energy_Recording.energy_cost_joint(:,7+1)';
+% E_LThigh_nas=E_LThigh_nas(:,2:end);
+% E_LKnee_nas=Energy_Recording.energy_cost_joint(:,8+1)';
+% E_LKnee_nas=E_LKnee_nas(:,2:end);
+% E_LAnkle_nas=Energy_Recording.energy_cost_joint(:,9+1)';
+% E_LAnkle_nas=E_LAnkle_nas(:,2:end);
+% 
+% E_RHipz_nas=Energy_Recording.energy_cost_joint(:,0+1)';
+% E_RHipz_nas=E_RHipz_nas(:,2:end);
+% E_RHipx_nas=Energy_Recording.energy_cost_joint(:,1+1)';
+% E_RHipx_nas=E_RHipx_nas(:,2:end);
+% 
+% E_LHipz_nas=Energy_Recording.energy_cost_joint(:,5+1)';
+% E_LHipz_nas=E_LHipz_nas(:,2:end);
+% E_LHipx_nas=Energy_Recording.energy_cost_joint(:,6+1)';
+% E_LHipx_nas=E_LHipx_nas(:,2:end);
+% 
+% E_Lower_nas=E_RThigh_nas(:,end)+E_LThigh_nas(:,end)+E_RKnee_nas(:,end)+...
+%                 E_LKnee_nas(:,end)+E_RAnkle_nas(:,end)+E_LAnkle_nas(:,end)+...
+%                 E_RHipz_nas(:,end)+E_RHipx_nas(:,end)+...
+%                 E_LHipz_nas(:,end)+E_LHipx_nas(:,end);
+%             
+% E_Upper_nas=Energy_Recording.energy_cost_joint(:,10+1:end);
+% E_Upper_nas=sum(E_Upper_nas(end,:));
+% load('h_0.15_l_0.1_v_nas.mat');
+% vx_NAS=Velocity_Recording.actual_com_velocity(:,1)';
+% vx_NAS=vx_NAS(:,2:end);
+% vz_NAS=Velocity_Recording.actual_com_velocity(:,3)';
+% vz_NAS=vz_NAS(:,2:end);
+% Mp_NAS=Velocity_Recording.pitch_moment;
+% Mp_NAS=Mp_NAS(:,2:end);
+% 
+% load('h_0.15_l_0.1_v_as.mat');
+% vx_AS=Velocity_Recording.actual_com_velocity(:,1)';
+% vx_AS=vx_AS(:,2:end);
+% vz_AS=Velocity_Recording.actual_com_velocity(:,3)';
+% vz_AS=vz_AS(:,2:end);
+% Mp_AS=Velocity_Recording.pitch_moment;
+% Mp_AS=Mp_AS(:,2:end);
+% 
+% time=Velocity_Recording.lcm_timestamp/5;
+% a=1;
+% num=5000;
+% time=time(:,a:num);
+% 
+% 
+% f1=figure;
+% plot(time,vx_NAS(:,a:num),'LineWidth',1.2);
+% hold on;
+% plot(time,vx_AS(:,a:num),'LineWidth',1.2);
+% xlabel('time (s)');ylabel('vx (m/s)');
+% legend('NAS','AS','Location', 'northwest');
+% set(gca, 'linewidth',1, 'fontsize',15,'Fontname', 'Times New Roman','FontWeight','bold');
+% 
+% 
+% f2=figure;
+% plot(time,vz_NAS(:,a:num),'LineWidth',1.2);
+% hold on;
+% plot(time,vz_AS(:,a:num),'LineWidth',1.2);
+% xlabel('time (s)');ylabel('vz (m/s)');
+% legend('NAS','AS','Location', 'northwest');
+% set(gca, 'linewidth',1, 'fontsize',15,'Fontname', 'Times New Roman','FontWeight','bold');
+% 
+% 
+% f3=figure;
+% plot(time,Mp_NAS(:,a:num));
+% xlabel('time (s)');ylabel('moment (N·m·s)');
+% hold on;
+% plot(time,Mp_AS(:,a:num));
+% hold on;
+% legend('NAS','AS');
+% set(gca, 'linewidth',1,'FontSize',15,'Fontname', 'Times New Roman','FontWeight','bold');
+% 
+% time=Velocity_Recording.lcm_timestamp/5;
+% a=550;
+% num=5000;
+% time=time(:,a:num);
+% sum_error_p_as=sum(abs(Mp_AS(:,a:num)));
+% sum_error_p_nas=sum(abs(Mp_NAS(:,a:num)));
+% 
+% sum_error_vx_as=sum(abs(vx_AS(:,a:num)));
+% sum_error_vx_nas=sum(abs(vx_NAS(:,a:num)));
+% 
+% sum_error_vz_as=sum(abs(vz_AS(:,a:num)));
+% sum_error_vz_nas=sum(abs(vz_NAS(:,a:num)));
+
+
+
+%% h=0.15, l=0.15;
+% E_Lower_as=175.3J;
+% E_Upper_as=23.1
+% E_Lower_nas=272.7J;
+% E_Upper_nas=0.49J;
+
+% agility_as=0.36m/s
+% agility_nas=0.32m/s
+
+% stability_time_as=2.921s
+% stability_time_nas=4.533s
+% sum_error_p_as=283.05m/s
+% sum_error_p_nas=805.41m/s
+% sum_error_vx_as=118.40m/s
+% sum_error_vx_nas=138.71m/s
+% sum_error_vz_as=383.16m/s
+% sum_error_vz_nas=392.38m/s
+
+% load('h_0.15_l_0.1_energy_nas.mat');
+% load('h=0.15_l=0.15/energy_as.mat');
+% E_RThigh_nas=Energy_Recording.energy_cost_joint(:,2+1)';
+% E_RThigh_nas=E_RThigh_nas(:,2:end);
+% E_RKnee_nas=Energy_Recording.energy_cost_joint(:,3+1)';
+% E_RKnee_nas=E_RKnee_nas(:,2:end);
+% E_RAnkle_nas=Energy_Recording.energy_cost_joint(:,4+1)';
+% E_RAnkle_nas=E_RAnkle_nas(:,2:end);
+% 
+% E_LThigh_nas=Energy_Recording.energy_cost_joint(:,7+1)';
+% E_LThigh_nas=E_LThigh_nas(:,2:end);
+% E_LKnee_nas=Energy_Recording.energy_cost_joint(:,8+1)';
+% E_LKnee_nas=E_LKnee_nas(:,2:end);
+% E_LAnkle_nas=Energy_Recording.energy_cost_joint(:,9+1)';
+% E_LAnkle_nas=E_LAnkle_nas(:,2:end);
+% 
+% E_RHipz_nas=Energy_Recording.energy_cost_joint(:,0+1)';
+% E_RHipz_nas=E_RHipz_nas(:,2:end);
+% E_RHipx_nas=Energy_Recording.energy_cost_joint(:,1+1)';
+% E_RHipx_nas=E_RHipx_nas(:,2:end);
+% 
+% E_LHipz_nas=Energy_Recording.energy_cost_joint(:,5+1)';
+% E_LHipz_nas=E_LHipz_nas(:,2:end);
+% E_LHipx_nas=Energy_Recording.energy_cost_joint(:,6+1)';
+% E_LHipx_nas=E_LHipx_nas(:,2:end);
+% 
+% E_Lower_nas=E_RThigh_nas(:,end)+E_LThigh_nas(:,end)+E_RKnee_nas(:,end)+...
+%                 E_LKnee_nas(:,end)+E_RAnkle_nas(:,end)+E_LAnkle_nas(:,end)+...
+%                 E_RHipz_nas(:,end)+E_RHipx_nas(:,end)+...
+%                 E_LHipz_nas(:,end)+E_LHipx_nas(:,end);
+%             
+% E_Upper_nas=Energy_Recording.energy_cost_joint(:,10+1:end);
+% E_Upper_nas=sum(E_Upper_nas(end,:));
+% 
+% load('h=0.15_l=0.15/v_nas.mat');
+% vx_NAS=Velocity_Recording.actual_com_velocity(:,1)';
+% vx_NAS=vx_NAS(:,2:end);
+% vz_NAS=Velocity_Recording.actual_com_velocity(:,3)';
+% vz_NAS=vz_NAS(:,2:end);
+% Mp_NAS=Velocity_Recording.pitch_moment;
+% Mp_NAS=Mp_NAS(:,2:end);
+% 
+% load('h=0.15_l=0.15/v_as.mat');
+% vx_AS=Velocity_Recording.actual_com_velocity(:,1)';
+% vx_AS=vx_AS(:,2:end);
+% vz_AS=Velocity_Recording.actual_com_velocity(:,3)';
+% vz_AS=vz_AS(:,2:end);
+% Mp_AS=Velocity_Recording.pitch_moment;
+% Mp_AS=Mp_AS(:,2:end);
+% 
+% time=Velocity_Recording.lcm_timestamp/5;
+% a=1;
+% num=5000;
+% time=time(:,a:num);
+% 
+% 
+% f1=figure;
+% plot(time,vx_NAS(:,a:num),'LineWidth',1.2);
+% hold on;
+% plot(time,vx_AS(:,a:num),'LineWidth',1.2);
+% xlabel('time (s)');ylabel('vx (m/s)');
+% legend('NAS','AS','Location', 'northwest');
+% set(gca, 'linewidth',1, 'fontsize',15,'Fontname', 'Times New Roman','FontWeight','bold');
+% 
+% 
+% f2=figure;
+% plot(time,vz_NAS(:,a:num),'LineWidth',1.2);
+% hold on;
+% plot(time,vz_AS(:,a:num),'LineWidth',1.2);
+% xlabel('time (s)');ylabel('vz (m/s)');
+% legend('NAS','AS','Location', 'northwest');
+% set(gca, 'linewidth',1, 'fontsize',15,'Fontname', 'Times New Roman','FontWeight','bold');
+% 
+% 
+% f3=figure;
+% plot(time,Mp_NAS(:,a:num));
+% xlabel('time (s)');ylabel('moment (N·m·s)');
+% hold on;
+% plot(time,Mp_AS(:,a:num));
+% hold on;
+% legend('NAS','AS');
+% set(gca, 'linewidth',1,'FontSize',15,'Fontname', 'Times New Roman','FontWeight','bold');
+% agility_as=cal_agility(vx_AS(:,200),vz_AS(:,200));
+% agility_nas=cal_agility(vx_NAS(:,200),vz_NAS(:,200));
+% 
+% 
+% time=Velocity_Recording.lcm_timestamp/5;
+% a=550;
+% num=5000;
+% time=time(:,a:num);
+% sum_error_p_as=sum(abs(Mp_AS(:,a:num)));
+% sum_error_p_nas=sum(abs(Mp_NAS(:,a:num)));
+% 
+% sum_error_vx_as=sum(abs(vx_AS(:,a:num)));
+% sum_error_vx_nas=sum(abs(vx_NAS(:,a:num)));
+% 
+% sum_error_vz_as=sum(abs(vz_AS(:,a:num)));
+% sum_error_vz_nas=sum(abs(vz_NAS(:,a:num)));
+
+
+
+%% h=0.15, l=0.2;
+% E_Lower_as=171.16J;
+% E_Upper_as=23.1
+% E_Lower_nas=272.8J;
+% E_Upper_nas=1.46J;
+
+% agility_as=0.447 m/s
+% agility_nas=0.43 m/s
+
+% stability_time_as=2.921s
+% stability_time_nas=4.533s
+% sum_error_p_as=217.7m/s
+% sum_error_p_nas=277.2m/s
+% just keeping the stability of posture
+
+% load('h=0.15_l=0.2/energy_nas.mat');
+load('h=0.15_l=0.2/energy_as.mat');
 E_RThigh_nas=Energy_Recording.energy_cost_joint(:,2+1)';
 E_RThigh_nas=E_RThigh_nas(:,2:end);
 E_RKnee_nas=Energy_Recording.energy_cost_joint(:,3+1)';
@@ -54,7 +285,8 @@ E_Lower_nas=E_RThigh_nas(:,end)+E_LThigh_nas(:,end)+E_RKnee_nas(:,end)+...
             
 E_Upper_nas=Energy_Recording.energy_cost_joint(:,10+1:end);
 E_Upper_nas=sum(E_Upper_nas(end,:));
-load('h_0.15_l_0.1_v_nas.mat');
+
+load('h=0.15_l=0.2/v_nas.mat');
 vx_NAS=Velocity_Recording.actual_com_velocity(:,1)';
 vx_NAS=vx_NAS(:,2:end);
 vz_NAS=Velocity_Recording.actual_com_velocity(:,3)';
@@ -62,7 +294,7 @@ vz_NAS=vz_NAS(:,2:end);
 Mp_NAS=Velocity_Recording.pitch_moment;
 Mp_NAS=Mp_NAS(:,2:end);
 
-load('h_0.15_l_0.1_v_as.mat');
+load('h=0.15_l=0.2/v_as.mat');
 vx_AS=Velocity_Recording.actual_com_velocity(:,1)';
 vx_AS=vx_AS(:,2:end);
 vz_AS=Velocity_Recording.actual_com_velocity(:,3)';
@@ -102,6 +334,9 @@ plot(time,Mp_AS(:,a:num));
 hold on;
 legend('NAS','AS');
 set(gca, 'linewidth',1,'FontSize',15,'Fontname', 'Times New Roman','FontWeight','bold');
+agility_as=cal_agility(vx_AS(:,200),vz_AS(:,200));
+agility_nas=cal_agility(vx_NAS(:,200),vz_NAS(:,200));
+
 
 time=Velocity_Recording.lcm_timestamp/5;
 a=550;
@@ -115,6 +350,10 @@ sum_error_vx_nas=sum(abs(vx_NAS(:,a:num)));
 
 sum_error_vz_as=sum(abs(vz_AS(:,a:num)));
 sum_error_vz_nas=sum(abs(vz_NAS(:,a:num)));
+
+a=0;
+
+
 
 
 
