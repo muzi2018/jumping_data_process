@@ -254,31 +254,49 @@ close all;
 % sum_error_vx_nas=138.71m/s
 % sum_error_vz_as=383.16m/s
 % sum_error_vz_nas=392.38m/s
+load('h_0.15_l_0.1_c_nas.mat');
+a=1;
+num=200;
+time=CONTACT_OUTPUT.lcm_timestamp/5;
+time=time(:,a:num);
 
-% load('h_0.15_l_0.1_energy_nas.mat');
-load('h_0.15_l_0.1_energy_as.mat');
-E_RThigh_nas=Energy_Recording.energy_cost_joint(:,2+1)';
+contact_nas=CONTACT_OUTPUT.contact_force(:,a:num);
+contact_nas=contact_nas(:,1:end);
+plot(time,contact_nas(:,a:num),'LineWidth',1.2);
+hold on;
+load('h_0.15_l_0.1_c_as.mat');
+contact_nas=CONTACT_OUTPUT.contact_force(:,a:num);
+contact_nas=contact_nas(:,1:end);
+plot(time,contact_nas(:,a:num),'LineWidth',1.2);
+legend('NAS','AS','Location', 'northwest');
+set(gca, 'linewidth',1, 'fontsize',15,'Fontname', 'Times New Roman','FontWeight','bold');
+
+load('h_0.15_l_0.1_energy_nas.mat');
+% load('h_0.15_l_0.1_energy_as.mat');
+a=1;
+num=200;
+E_RThigh_nas=Energy_Recording.energy_cost_joint(a:num,2+1)';
 E_RThigh_nas=E_RThigh_nas(:,2:end);
-E_RKnee_nas=Energy_Recording.energy_cost_joint(:,3+1)';
+E_RKnee_nas=Energy_Recording.energy_cost_joint(a:num,3+1)';
 E_RKnee_nas=E_RKnee_nas(:,2:end);
-E_RAnkle_nas=Energy_Recording.energy_cost_joint(:,4+1)';
+E_RAnkle_nas=Energy_Recording.energy_cost_joint(a:num,4+1)';
 E_RAnkle_nas=E_RAnkle_nas(:,2:end);
 
-E_LThigh_nas=Energy_Recording.energy_cost_joint(:,7+1)';
+E_LThigh_nas=Energy_Recording.energy_cost_joint(a:num,7+1)';
 E_LThigh_nas=E_LThigh_nas(:,2:end);
-E_LKnee_nas=Energy_Recording.energy_cost_joint(:,8+1)';
+E_LKnee_nas=Energy_Recording.energy_cost_joint(a:num,8+1)';
 E_LKnee_nas=E_LKnee_nas(:,2:end);
-E_LAnkle_nas=Energy_Recording.energy_cost_joint(:,9+1)';
+E_LAnkle_nas=Energy_Recording.energy_cost_joint(a:num,9+1)';
 E_LAnkle_nas=E_LAnkle_nas(:,2:end);
 
-E_RHipz_nas=Energy_Recording.energy_cost_joint(:,0+1)';
+E_RHipz_nas=Energy_Recording.energy_cost_joint(a:num,0+1)';
 E_RHipz_nas=E_RHipz_nas(:,2:end);
-E_RHipx_nas=Energy_Recording.energy_cost_joint(:,1+1)';
+E_RHipx_nas=Energy_Recording.energy_cost_joint(a:num,1+1)';
 E_RHipx_nas=E_RHipx_nas(:,2:end);
 
-E_LHipz_nas=Energy_Recording.energy_cost_joint(:,5+1)';
+E_LHipz_nas=Energy_Recording.energy_cost_joint(a:num,5+1)';
 E_LHipz_nas=E_LHipz_nas(:,2:end);
-E_LHipx_nas=Energy_Recording.energy_cost_joint(:,6+1)';
+E_LHipx_nas=Energy_Recording.energy_cost_joint(a:num,6+1)';
 E_LHipx_nas=E_LHipx_nas(:,2:end);
 
 E_Lower_nas=E_RThigh_nas(:,end)+E_LThigh_nas(:,end)+E_RKnee_nas(:,end)+...
@@ -286,7 +304,7 @@ E_Lower_nas=E_RThigh_nas(:,end)+E_LThigh_nas(:,end)+E_RKnee_nas(:,end)+...
                 E_RHipz_nas(:,end)+E_RHipx_nas(:,end)+...
                 E_LHipz_nas(:,end)+E_LHipx_nas(:,end);
             
-E_Upper_nas=Energy_Recording.energy_cost_joint(:,10+1:end);
+E_Upper_nas=Energy_Recording.energy_cost_joint(a:num,10+1:end);
 E_Upper_nas=sum(E_Upper_nas(end,:));
 load('h_0.15_l_0.1_v_nas.mat');
 vx_NAS=Velocity_Recording.actual_com_velocity(:,1)';
