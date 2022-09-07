@@ -500,98 +500,98 @@ close all; clear;clc;
 
 
 
-% X = categorical({'Total','Upper','Lower'});
-% X = reordercats(X,{'Total','Upper','Lower'});
-% Y = [131.1 167.4 138.9 181.3 164 198.1 202 230.5 198  266.2 237.6 275.1;
-%      7.7    0.1    5.8   0.3  13   0.1   23  0.5   12   0.2  27.6 0.8;
-%      123.4  167.3 133.1 181 151  198   179 230 186   266  210 274.3];
-% b = bar(X,Y,1);
-% % \FontName{Times New Roman}
-% t=ylabel('Energy(J)','FontName','Times New Roman');
-% 
-% xtips1 = b(1).XEndPoints;
-% ytips1 = b(1).YEndPoints; 
-% labels1 = string(b(1).YData);
-% text1=text(xtips1,ytips1+5,labels1,'HorizontalAlignment','left',...
-%     'VerticalAlignment','middle','FontSize',11,'rotation', 90);
-% 
-% xtips2 = b(2).XEndPoints;
-% ytips2 = b(2).YEndPoints; 
-% labels2 = string(b(2).YData);
-% text(xtips2,ytips2+5,labels2,'HorizontalAlignment','left',...
-%     'VerticalAlignment','middle','FontSize',11,'rotation', 90);
-% 
-% xtips3 = b(3).XEndPoints;
-% ytips3 = b(3).YEndPoints; 
-% labels3 = string(b(3).YData);
-% text(xtips3,ytips3+5,labels3,'HorizontalAlignment','left',...
-%     'VerticalAlignment','middle','FontSize',11,'rotation', 90);
-% 
-% xtips4 = b(4).XEndPoints;
-% ytips4 = b(4).YEndPoints; 
-% labels4 = string(b(4).YData);
-% text(xtips4,ytips4+5,labels4,'HorizontalAlignment','left',...
-%     'VerticalAlignment','middle','FontSize',11,'rotation', 90);
-% 
-% xtips5 = b(5).XEndPoints;
-% ytips5 = b(5).YEndPoints; 
-% labels5 = string(b(5).YData);
-% text(xtips5,ytips5+5,labels5,'HorizontalAlignment','left',...
-%     'VerticalAlignment','middle','FontSize',11,'rotation', 90);
-% 
-% 
-% 
-% xtips6 = b(6).XEndPoints;
-% ytips6 = b(6).YEndPoints; 
-% labels6 = string(b(6).YData);
-% text6=text(xtips6,ytips6+5,labels6,'HorizontalAlignment','left',...
-%     'VerticalAlignment','middle','FontSize',11,'rotation', 90);
-% 
-% xtips7 = b(7).XEndPoints;
-% ytips7 = b(7).YEndPoints; 
-% labels7 = string(b(7).YData);
-% text(xtips7,ytips7+5,labels7,'HorizontalAlignment','left',...
-%     'VerticalAlignment','middle','FontSize',11,'rotation', 90);
-% 
-% xtips8 = b(8).XEndPoints;
-% ytips8 = b(8).YEndPoints; 
-% labels8 = string(b(8).YData);
-% text(xtips8,ytips8+5,labels8,'HorizontalAlignment','left',...
-%     'VerticalAlignment','middle','FontSize',11,'rotation', 90);
-% 
-% xtips9 = b(9).XEndPoints;
-% ytips9 = b(9).YEndPoints; 
-% labels9 = string(b(9).YData);
-% text(xtips9,ytips9+5,labels9,'HorizontalAlignment','left',...
-%     'VerticalAlignment','middle','FontSize',11,'rotation', 90);
-% 
-% xtips10 = b(10).XEndPoints;
-% ytips10 = b(10).YEndPoints; 
-% labels10 = string(b(10).YData);
-% text(xtips10,ytips10+5,labels10,'HorizontalAlignment','left',...
-%     'VerticalAlignment','middle','FontSize',11,'rotation', 90);
-% 
-% xtips11 = b(11).XEndPoints;
-% ytips11 = b(11).YEndPoints; 
-% labels11 = string(b(11).YData);
-% text(xtips11,ytips11+5,labels11,'HorizontalAlignment','left',...
-%     'VerticalAlignment','middle','FontSize',11,'rotation', 90);
-% 
-% xtips12 = b(12).XEndPoints;
-% ytips12 = b(12).YEndPoints; 
-% labels12 = string(b(12).YData);
-% text(xtips12,ytips12+5,labels12,'HorizontalAlignment','left',...
-%     'VerticalAlignment','middle','FontSize',11,'rotation', 90);
-% 
-% 
-% legend('h=0.1 l=0.1 AS','h=0.1 l=0.1 NAS','h=0.1 l=0.15 AS','h=0.1 l=0.15 NAS',...
-%         'h=0.15 l=0.1 AS','h=0.15 l=0.1 NAS','h=0.15 l=0.15 AS','h=0.15 l=0.15 NAS',...
-%         'h=0.2 l=0.1 AS','h=0.2 l=0.1 NAS','h=0.2 l=0.15 AS','h=0.2 l=0.15 NAS');
-% ylabel('Energy  (J)','FontWeight','bold')
-% % set(gca,'FontSize',15)
-% ylim([0 500]);
-% 
-% set(gca,'FontSize',15,'FontName', 'times new romane');
+X = categorical({'Total','Upper','Lower'});
+X = reordercats(X,{'Total','Upper','Lower'});
+Y = [131.1 167.4 138.9 181.3 164 198.1 202 230.5 198  266.2 237.6 275.1;
+     7.7    0.1    5.8   0.3  13   0.1   23  0.5   12   0.2  27.6 0.8;
+     123.4  167.3 133.1 181 151  198   179 230 186   266  210 274.3];
+b = bar(X,Y,1);
+% \FontName{Times New Roman}
+t=ylabel('Energy(J)','FontName','Times New Roman');
+
+xtips1 = b(1).XEndPoints;
+ytips1 = b(1).YEndPoints; 
+labels1 = string(b(1).YData);
+text1=text(xtips1,ytips1+5,labels1,'HorizontalAlignment','left',...
+    'VerticalAlignment','middle','FontSize',20,'rotation', 90,'FontWeight','bold');
+
+xtips2 = b(2).XEndPoints;
+ytips2 = b(2).YEndPoints; 
+labels2 = string(b(2).YData);
+text(xtips2,ytips2+5,labels2,'HorizontalAlignment','left',...
+    'VerticalAlignment','middle','FontSize',20,'rotation', 90,'FontWeight','bold');
+
+xtips3 = b(3).XEndPoints;
+ytips3 = b(3).YEndPoints; 
+labels3 = string(b(3).YData);
+text(xtips3,ytips3+5,labels3,'HorizontalAlignment','left',...
+    'VerticalAlignment','middle','FontSize',20,'rotation', 90,'FontWeight','bold');
+
+xtips4 = b(4).XEndPoints;
+ytips4 = b(4).YEndPoints; 
+labels4 = string(b(4).YData);
+text(xtips4,ytips4+5,labels4,'HorizontalAlignment','left',...
+    'VerticalAlignment','middle','FontSize',20,'rotation', 90,'FontWeight','bold');
+
+xtips5 = b(5).XEndPoints;
+ytips5 = b(5).YEndPoints; 
+labels5 = string(b(5).YData);
+text(xtips5,ytips5+5,labels5,'HorizontalAlignment','left',...
+    'VerticalAlignment','middle','FontSize',20,'rotation', 90,'FontWeight','bold');
+
+
+
+xtips6 = b(6).XEndPoints;
+ytips6 = b(6).YEndPoints; 
+labels6 = string(b(6).YData);
+text6=text(xtips6,ytips6+5,labels6,'HorizontalAlignment','left',...
+    'VerticalAlignment','middle','FontSize',20,'rotation', 90,'FontWeight','bold');
+
+xtips7 = b(7).XEndPoints;
+ytips7 = b(7).YEndPoints; 
+labels7 = string(b(7).YData);
+text(xtips7,ytips7+5,labels7,'HorizontalAlignment','left',...
+    'VerticalAlignment','middle','FontSize',20,'rotation', 90,'FontWeight','bold');
+
+xtips8 = b(8).XEndPoints;
+ytips8 = b(8).YEndPoints; 
+labels8 = string(b(8).YData);
+text(xtips8,ytips8+5,labels8,'HorizontalAlignment','left',...
+    'VerticalAlignment','middle','FontSize',20,'rotation', 90,'FontWeight','bold');
+
+xtips9 = b(9).XEndPoints;
+ytips9 = b(9).YEndPoints; 
+labels9 = string(b(9).YData);
+text(xtips9,ytips9+5,labels9,'HorizontalAlignment','left',...
+    'VerticalAlignment','middle','FontSize',20,'rotation', 90,'FontWeight','bold');
+
+xtips10 = b(10).XEndPoints;
+ytips10 = b(10).YEndPoints; 
+labels10 = string(b(10).YData);
+text(xtips10,ytips10+5,labels10,'HorizontalAlignment','left',...
+    'VerticalAlignment','middle','FontSize',20,'rotation', 90,'FontWeight','bold');
+
+xtips11 = b(11).XEndPoints;
+ytips11 = b(11).YEndPoints; 
+labels11 = string(b(11).YData);
+text(xtips11,ytips11+5,labels11,'HorizontalAlignment','left',...
+    'VerticalAlignment','middle','FontSize',20,'rotation', 90,'FontWeight','bold');
+
+xtips12 = b(12).XEndPoints;
+ytips12 = b(12).YEndPoints; 
+labels12 = string(b(12).YData);
+text(xtips12,ytips12+5,labels12,'HorizontalAlignment','left',...
+    'VerticalAlignment','middle','FontSize',20,'rotation', 90,'FontWeight','bold');
+
+
+legend('h=0.1 l=0.1 AS','h=0.1 l=0.1 NAS','h=0.1 l=0.15 AS','h=0.1 l=0.15 NAS',...
+        'h=0.15 l=0.1 AS','h=0.15 l=0.1 NAS','h=0.15 l=0.15 AS','h=0.15 l=0.15 NAS',...
+        'h=0.2 l=0.1 AS','h=0.2 l=0.1 NAS','h=0.2 l=0.15 AS','h=0.2 l=0.15 NAS');
+ylabel('Energy  (J)','FontWeight','bold')
+% set(gca,'FontSize',15)
+ylim([0 650]);
+
+set(gca,'FontSize',20,'FontName', 'times new romane','FontWeight','bold');
 a=1;
 
 
